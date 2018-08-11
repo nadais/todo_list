@@ -1,0 +1,38 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "description": "TODO list backend",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node ./src/index.ts",
+    "start": "npm run build && nodemon ./dist/index.js",
+    "prod": "npm run build && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadais/todo_list.git"
+  },
+  "keywords": [
+    "todolist",
+    "express",
+    "docker",
+    "node",
+    "typescript"
+  ],
+  "author": "Joao Nadais <joaonadais@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nadais/todo_list/issues"
+  },
+  "homepage": "https://github.com/nadais/todo_list#readme",
+  "dependencies": {
+    "nodemon": "^1.18.3",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "typescript": "^3.0.1",
+    "ts-node": "^7.0.0"
+  }
+}

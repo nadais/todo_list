@@ -1,0 +1,33 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadais/todo_list.git"
+  },
+  "keywords": [
+    "todolist",
+    "express",
+    "docker",
+    "node",
+    "typescript"
+  ],
+  "author": "Joao Nadais <joaonadais@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nadais/todo_list/issues"
+  },
+  "homepage": "https://github.com/nadais/todo_list#readme"
+}
