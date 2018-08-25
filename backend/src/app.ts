@@ -1,25 +1,20 @@
-import express from 'express'
-import { Express } from 'express'
+import * as express from 'express';
+import { json } from 'body-parser';
+import { TaskRouter } from './routes';
 
-class App
+const port = process.env.PORT || 3200;
+const app = express();
+app.use(json());
+app.use("/",TaskRouter.routes());
+
+
+const server = app.listen(port, (err : Error) =>
 {
-    public express: Express;
-    public constructor()
-    {
-        this.express = express();
-        this.mountRoutes();
-    }
-    private mountRoutes()
-    {
-        const router = express.Router();
-        router.get('/', (req, res ) => {
-            res.json(
-                {
-                    message: 'Hello world!'
-                });
-        } );
-        this.express.use(router);
-    }
-}
+  if (err)
+  {
+    return console.log(err)
+  }
 
-export default new App().express;
+  return console.log(`server is listening on ${port}`)
+})
+export { server };

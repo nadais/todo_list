@@ -63,3 +63,5 @@ typings/
 
 # distribution generated files (from ts)
 */dist
+
+data/

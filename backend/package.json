@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node ./src/index.ts",
-    "start": "npm run build && nodemon ./dist/index.js",
+    "start": "npm run build && nodemon",
+    "test": "jest",
     "prod": "npm run build && npm run start"
   },
   "repository": {
@@ -27,12 +27,18 @@
   },
   "homepage": "https://github.com/nadais/todo_list#readme",
   "dependencies": {
-    "nodemon": "^1.18.3",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "mongoose": "^5.2.9",
+    "nodemon": "^1.18.3"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.2.7",
     "@types/express": "^4.16.0",
-    "typescript": "^3.0.1",
-    "ts-node": "^7.0.0"
+    "@types/jest": "^23.3.1",
+    "jest": "^23.5.0",
+    "mockgoose-fix": "^7.3.6",
+    "ts-jest": "^23.1.4",
+    "ts-node": "^7.0.0",
+    "typescript": "^3.0.1"
   }
 }
