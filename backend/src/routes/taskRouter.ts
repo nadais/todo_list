@@ -3,15 +3,23 @@ import { TaskController } from "../controller/taskController";
 
 export abstract class TaskRouteFunctions 
 {
-    static async getAllTasks( _ : Request, res : Response) 
+    static async deleteTask(req: Request, res: Response)
     {
-        const tasks = await TaskController.getAllTasks();
-        res.json(tasks);
+        let result = await TaskController.deleteTask(
+            {
+                description: req.params.description
+            });
+        res.json(result);
     }
-    static async getTask(req: Request, res: Response)
+    static async createTask(req: Request, res: Response)
     {
-        const tasks = await TaskController.getTask(req.params.id);
-        res.json(tasks);   
+        let result = await TaskController.createTasks([req.body]);
+        res.json(result);
+    }
+    static async getTasks( req: Request, res: Response)
+    {
+        const tasks = await TaskController.getTasks(req.query);
+        res.json( tasks );
     }
 }
 
@@ -20,7 +28,8 @@ export class TaskRouter
     static routes(): Router 
     {
         return Router()
-        .get('/task', TaskRouteFunctions.getAllTasks)
-        .get('/task/:id', TaskRouteFunctions.getTask);
+        .get('/task', TaskRouteFunctions.getTasks)
+        .post('/task', TaskRouteFunctions.createTask)
+        .delete('/task/:description',TaskRouteFunctions.deleteTask);
     }
 }

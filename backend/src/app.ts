@@ -1,10 +1,10 @@
-import * as express from 'express';
-import { json } from 'body-parser';
+import express = require('express');
 import { TaskRouter } from './routes';
 
 const port = process.env.PORT || 3200;
 const app = express();
-app.use(json());
+app.use( express.json());
+app.use( express.urlencoded({extended: true}));
 app.use("/",TaskRouter.routes());
 
 
