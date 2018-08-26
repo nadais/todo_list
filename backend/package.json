@@ -28,14 +28,18 @@
   "homepage": "https://github.com/nadais/todo_list#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "graphql": "^0.13.2",
+    "graphql-tools": "^3.1.1",
     "mongoose": "^5.2.9",
     "nodemon": "^1.18.3",
     "odata-v4-mongodb": "^0.1.12"
   },
   "devDependencies": {
     "@types/express": "^4.16.0",
+    "@types/express-graphql": "^0.6.1",
     "@types/jest": "^23.3.1",
     "@types/mongoose": "^5.2.7",
+    "express-graphql": "^0.6.12",
     "jest": "^23.5.0",
     "ts-jest": "^23.1.4",
     "ts-node": "^7.0.0",

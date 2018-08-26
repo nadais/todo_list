@@ -5,14 +5,19 @@ const schema = new Schema(
     {
         description: 
         {
+            type: String
+        },
+        title:
+        {
             type: String,
-            default: "empty"
+            required: true
         }
     });
 
 export interface ITask extends Document 
 {
     description: string;
+    title: string;
 }
 
 export interface ITaskModel extends Model<ITask>

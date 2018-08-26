@@ -1,24 +1,8 @@
 import { Task, ITask } from "../model/task";
-import { createFilter } from "odata-v4-mongodb";
-type ODataParams = 
-{
-    $top?: number,
-    $skip?: number,
-    $filter?: string,
-    $orderBy?: string,
-    $select?: string
-
-}
-
 export abstract class TaskController 
 {
-    static getTasks(params: ODataParams): any {
-        let filter = {};
-        if(params.$filter != null)
-        {
-            filter = createFilter(params.$filter);
-        }
-        return Task.find(filter);
+    static getTasks(params: any, single: boolean = false): any {
+        return single ? Task.findOne( params ) : Task.find( params );
     }
     static async createTasks(tasks: Object[] ): Promise<ITask[]> {
         let result = await Task.create( tasks );
