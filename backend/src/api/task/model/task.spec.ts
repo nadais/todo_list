@@ -1,6 +1,5 @@
 import { Task } from './task';
 import "jest";
-import { ValidationError } from 'mongoose';
 
 
 test('Task creation title',() => {

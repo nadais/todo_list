@@ -31,3 +31,11 @@ test('Task delete all by description', async () =>
     expect(afterTasks.length).toEqual(tasks.length - 10 );
 } );
 
+test('Task update', async () => 
+{
+    let tasks = await TaskController.createTasks([{title: 'Updating task'}]);
+
+    
+    let task = await TaskController.updateTask({_id: tasks[0]._id, title: 'Updated task'});
+    expect( task.title ).toEqual( 'Updated task' );
+} );

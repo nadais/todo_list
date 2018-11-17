@@ -1,4 +1,4 @@
-import { mongoose } from "../config/database";
+import { mongoose } from "../../../config/database";
 import { Schema, Document, Model } from "mongoose";
 
 const schema = new Schema(
@@ -16,9 +16,10 @@ const schema = new Schema(
 
 export interface ITask extends Document 
 {
-    description: string;
-    title: string;
+    description?: string;
+    title?: string;
 }
+
 
 export interface ITaskModel extends Model<ITask>
 {

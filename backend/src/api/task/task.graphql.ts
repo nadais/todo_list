@@ -1,14 +1,16 @@
-import { TaskController } from "../../controller/taskController";
+import { TaskController } from "./controller/taskController";
 
 export var typeDefs = `
 type Task 
 {
     _id: ID!
-    description: String!
+    title: String!
+    description: String
 }
 input TaskInput 
 {
     _id: ID
+    title: String
     description: String
 }
 
@@ -20,9 +22,10 @@ type Query
 
 type Mutation
 {
-    createTask(description: String!): Task!
-    createTasks(tasks: [String]): [Task]!
-    deleteTask(description: String!): Task!
+    createTask(task: TaskInput): Task!
+    createTasks(tasks: [TaskInput]): [Task]!
+    updateTask(task: TaskInput): Task!
+    deleteTask(task: TaskInput!): Boolean!
     deleteTasks(tasks:  [TaskInput]): [Task]!
 }
 `
@@ -41,22 +44,29 @@ export var resolvers = {
     },
     Mutation: 
     {
-        createTask: async ( _, args: { description: string } ) => 
+        createTask: async ( _, args: any ) => 
         {
-            const task = await TaskController.createTasks( [ args.description ] );
-            return task;
+            const tasks = await TaskController.createTasks(
+                [ args.task ] );
+            return tasks[0];
         },
         createTasks: async (_, args: { tasks: any[]}) => 
         {
             const createdTasks = await TaskController.createTasks( args.tasks );
             return createdTasks;
         },
-        deleteTask: async (_, args) => 
+        updateTask: async ( _, args: any ) => 
         {
-            const task = await TaskController.deleteTask( args );
+            const task = await TaskController.updateTask(
+                args.task );
             return task;
         },
-        deleteTasks: async (_, args) => 
+        deleteTask: async (_, args: any): Promise<boolean> => 
+        {
+            const task = await TaskController.deleteTask( args.task );
+            return task.n > 0;
+        },
+        deleteTasks: async (_, args: any[]) => 
         {
             const tasks = await TaskController.deleteAllTasks( args );
             return tasks;
