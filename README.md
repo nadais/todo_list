@@ -10,8 +10,8 @@ Run the following commands
 
 ## Running frontend
 
-Frontend should be running in http://localhost:3100
+Frontend should be running in http://localhost:3000
 
 ## Running backend
 
-To test the task API, you can go to http://localhost:3200/task
+To test the task API, you can go to http://localhost:3200/api
