@@ -7,4 +7,4 @@ RUN npm install
 
 EXPOSE 3000
 
-ENTRYPOINT [ "npm","start","||","tail","-f","/dev/null" ]
+ENTRYPOINT [ "npm","start" ]
