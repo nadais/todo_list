@@ -15,5 +15,6 @@ before_install:
 script:
   - docker-compose build
   - docker-compose up -d
-  - docker exec -it app_frontend sh -c 'npm test > /proc/1/fd/1'
   - docker exec -it app_backend sh -c 'npm test > /proc/1/fd/1'
+  - docker exec -it app_frontend sh -c 'npm run build > /proc/1/fd/1'
+  - docker exec -it app_frontend sh -c 'npm run test:coverage > /proc/1/fd/1'
