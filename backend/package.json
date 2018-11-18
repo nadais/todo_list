@@ -1,12 +1,13 @@
 {
   "name": "backend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "TODO list backend",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "start": "npm run build && nodemon",
     "test": "jest",
+    "test:watch": "jest --watchAll",
     "prod": "npm run build && npm run start"
   },
   "repository": {
@@ -27,23 +28,21 @@
   },
   "homepage": "https://github.com/nadais/todo_list#readme",
   "dependencies": {
-    "express": "^4.16.3",
-    "graphql": "^0.13.2",
-    "graphql-tools": "^3.1.1",
-    "mongoose": "^5.2.9",
-    "nodemon": "^1.18.3",
-    "odata-v4-mongodb": "^0.1.12"
+    "express": "^4.16.4",
+    "graphql": "^14.0.2",
+    "graphql-tools": "^4.0.3",
+    "mongoose": "^5.3.12",
+    "nodemon": "^1.18.6"
   },
   "devDependencies": {
     "@types/express": "^4.16.0",
-    "@types/express-graphql": "^0.6.1",
-    "@types/jest": "^23.3.1",
-    "@types/mongoose": "^5.2.7",
-    "express-graphql": "^0.6.12",
-    "jest": "^23.5.0",
-    "ts-jest": "^23.1.4",
-    "ts-node": "^7.0.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.0.1"
+    "@types/express-graphql": "^0.6.2",
+    "@types/jest": "^23.3.9",
+    "@types/mongoose": "^5.3.1",
+    "express-graphql": "^0.7.1",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.4",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6"
   }
 }
