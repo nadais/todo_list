@@ -1,19 +1,19 @@
 {
   "name": "frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.4",
-    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
     "@fortawesome/react-fontawesome": "^0.1.3",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.10.0",
     "npm-run-all": "^4.1.3",
-    "react": "^16.5.0",
+    "react": "^16.6.3",
     "react-bootstrap": "^1.0.0-beta.1",
-    "react-dom": "^16.5.0",
-    "react-scripts": "1.1.5"
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1"
   },
   "scripts": {
     "start": "npm-run-all -p watch-css start-js",
@@ -45,5 +45,11 @@
   "bugs": {
     "url": "https://github.com/nadais/todo_list/issues"
   },
-  "homepage": "https://github.com/nadais/todo_list#readme"
+  "homepage": "https://github.com/nadais/todo_list#readme",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

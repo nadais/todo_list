@@ -120,7 +120,6 @@ class Board extends Component
         result = result.data.updateTask;
         let newTasks = this.state.tasks.map( task => 
             {
-                console.log( task, result );
                 return task._id === result._id ? result : task;
             });
         this.setState( { tasks: newTasks } );
