@@ -1,6 +1,7 @@
 # todo_list
 
 Simple todo list app using React and Node js, based on a graphQL API
+[![Build Status](https://travis-ci.org/nadais/todo_list.svg?branch=master)](https://travis-ci.org/nadais/todo_list)
 
 ## Installing
 Run the following commands 
