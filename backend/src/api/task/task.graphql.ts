@@ -63,13 +63,13 @@ export var resolvers = {
         },
         deleteTask: async (_, args: any): Promise<boolean> => 
         {
-            const task = await TaskController.deleteTask( args.task );
-            return task.n > 0;
+            const result = await TaskController.deleteTask( args.task );
+            return result.n > 0;
         },
         deleteTasks: async (_, args: any[]) => 
         {
-            const tasks = await TaskController.deleteAllTasks( args );
-            return tasks;
+            const result = await TaskController.deleteAllTasks( args );
+            return result.n;
         }
     }
 }

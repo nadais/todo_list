@@ -17,36 +17,35 @@ export abstract class TaskController{
         return result;
     }
     public static deleteTask(filter: any): Promise<any> {
-        return new Promise( (resolve,reject ) => {
+        return new Promise( ( resolve, reject ) => 
+        {
             if(filter._id !== null)
             {
                 filter._id = new ObjectID(filter._id);
             }
-            Task.deleteOne( filter, err => {
-                if ( err )
-                {
-                    reject( err );
-                }
-                else
-                {
-                    resolve();
-                }
+                Task.deleteOne( filter).exec((err, res )  => {
+                    if ( err !== null )
+                    {
+                        reject( err );
+                    }
+                    else
+                    {
+                        resolve( res );
+                    }
+                    } );
             } );
-        } )
     }
     public static deleteAllTasks(filter: object): Promise<any> {
-        return new Promise( (resolve,reject ) => {
-            Task.deleteMany( filter, err => {
-                if ( err )
+        return new Promise( ( resolve, reject ) => 
+        {
+            Task.deleteMany( filter ).exec( (err, res) => {
+                if ( err !== null )
                 {
                     reject( err );
                 }
-                else
-                {
-                    resolve();
-                }
-            } );
-        } )
+                return resolve( res );
+                } );
+        } );
     }
 
 }

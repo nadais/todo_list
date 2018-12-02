@@ -34,9 +34,8 @@ afterAll( async () =>
 test('Task deletion', async () => 
 {
     let tasks = await TaskController.createTasks([{title: 'something'}]);
-    await TaskController.deleteTask({ _id: tasks[0]._id });
-    let afterTasks = await TaskController.getTasks({ _id: tasks[0]._id });
-    expect(afterTasks.length).toEqual( 0 );
+    let count = await TaskController.deleteTask({ _id: tasks[0]._id });
+    expect(count.n).toEqual( 1 );
 } );
 
 test('Single Task creation', async () => 
@@ -67,17 +66,15 @@ test('Task delete all by description', async () =>
         creatingTasks.push({title: "mass created task"});
     }
     await TaskController.createTasks(creatingTasks);
-    let tasks = await TaskController.getTasks({});
-    await TaskController.deleteAllTasks({title: 'mass created task'});
-    let afterTasks = await TaskController.getTasks({});
-    expect(afterTasks.length).toEqual(tasks.length - 10 );
+    let count = await TaskController.deleteAllTasks({title: 'mass created task'});
+    expect(count.n).toEqual( 10 );
 } );
 
 test('Task update', async () => 
 {
     let tasks = await TaskController.createTasks([{title: 'Updating task'}]);
 
-    
+
     let task = await TaskController.updateTask({_id: tasks[0]._id, title: 'Updated task'});
     expect( task.title ).toEqual( 'Updated task' );
 } );
