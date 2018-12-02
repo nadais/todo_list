@@ -36,10 +36,9 @@
   },
   "keywords": [
     "todolist",
-    "express",
-    "docker",
-    "node",
-    "typescript"
+    "react",
+    "bootstrap",
+    "fontawesome"
   ],
   "author": "Joao Nadais <joaonadais@gmail.com>",
   "license": "MIT",
