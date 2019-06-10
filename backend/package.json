@@ -28,21 +28,21 @@
   },
   "homepage": "https://github.com/nadais/todo_list#readme",
   "dependencies": {
-    "express": "^4.16.4",
-    "graphql": "^14.0.2",
-    "graphql-tools": "^4.0.3",
-    "mongoose": "^5.3.12",
-    "nodemon": "^1.18.7"
+    "express": "^4.17.1",
+    "graphql": "^14.3.1",
+    "graphql-tools": "^4.0.4",
+    "mongoose": "^5.5.14",
+    "nodemon": "^1.19.1"
   },
   "devDependencies": {
-    "@types/express": "^4.16.0",
-    "@types/express-graphql": "^0.6.2",
-    "@types/jest": "^23.3.10",
-    "@types/mongoose": "^5.3.1",
-    "express-graphql": "^0.7.1",
-    "jest": "^23.6.0",
-    "ts-jest": "^23.10.5",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.2.1"
+    "@types/express": "^4.17.0",
+    "@types/express-graphql": "^0.8.0",
+    "@types/jest": "^24.0.13",
+    "@types/mongoose": "^5.5.5",
+    "express-graphql": "^0.8.0",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1"
   }
 }
