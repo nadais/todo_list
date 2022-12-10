@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/nadais/todo_list#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "graphql": "^14.3.1",
     "graphql-tools": "^4.0.4",
     "mongoose": "^5.7.5",
